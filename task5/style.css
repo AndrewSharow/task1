@@ -1,0 +1,7 @@
+.button-readmore{
+    background:none; 
+    border:none;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
