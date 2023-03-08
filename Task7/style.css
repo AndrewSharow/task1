@@ -1,0 +1,55 @@
+* {
+    /* Почему не добавили box-sizing: border-box? */
+    /* ибо тогда все бы сьехало из за того, что 'box-sizing: border-box' делает 'padding' и 'border' внутри єлемента, и 'width' и 'height' отвечают за весь элемент, и изменяя 'padding' и 'border', мы будем изменять и позицию всего елемента */
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    /* vh - это... */
+    /* еденица измерения зависящяя от высоты окна браузера. 1vh являеться 1 процентам от высоты окна браузера */
+    height: 100vh;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction - это ... */
+    /* атрибут задающие расположение елементов в flex контейнере */
+    flex-direction: column;
+}
+.maze-field {
+    width: 500px;
+    height: 500px;
+    border: 5px solid black; 
+    /* Почему мы ставим position: relative? */
+    /* ибо у нас есть 'div wrapper' в котором стоит атрибут 'display: flex' и если б стоял 'position: absolute;', тег 'h1' стал бы в центр а на него наложился 'div maze-field'*/
+    position: relative;
+}
+.maze-block {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    /* Почему мы ставим position: absolute? */
+    /* что б left и top были относительно 'div maze-field' ибо 'position: absolute' ссылаеться на своего родителя, и ориентируеться относительно него. */
+    position: absolute;
+}
+#player {
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    /* Почему мы ставим position: absolute? */
+    /* Ответ в прошлом селекторе) */
+    position: absolute;
+}
+#finish{
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    position: absolute;
+}
+
+html {
+    background: rgb(246, 146, 255);
+}
